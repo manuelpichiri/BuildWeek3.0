@@ -10,11 +10,36 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./firts.css" />
   </head>
   <body>
+   
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div data-hash="slide1" class="swiper-slide">
+          <div class="ml-3 pl-3">
+            <img src="https://picsum.photos/200/200" />
+          </div>
+          <div class="ml-3">
+            <h5>Album</h5>
+            <h1>Viola Feat. Salmo</h1>
+            <h5>Fedez,Salmo</h5>
+            <h5>Ascolta il nuovo singolo di Fedez e Salmo!</h5>
+          </div>
+        </div>
+        <div data-hash="slide2" class="swiper-slide">Slide 2</div>
+        <div data-hash="slide3" class="swiper-slide">Slide 3</div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
     
-    <div class="playlist-card bg-dark d-flex flex-column justify-content-center align-items-start gap-3">
+     <div class="playlist-card bg-dark d-flex flex-column justify-content-center align-items-start gap-3">
       <div class="playlist-card-img-container w-100">
         <img class="w-100 ogject-fit-cover" src="https://picsum.photos/200" alt="playlist card image">
       </div>
@@ -23,14 +48,13 @@
         <p class="playlist-card-description text-secondary m-0">La playlist più calda del momento</p>
       </div>
     </div>
-
-
-
+    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./mainfirst.js"></script>
   </body>
 </html>
