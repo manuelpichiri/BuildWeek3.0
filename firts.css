@@ -1,0 +1,13 @@
+.playlist-card {
+  width: 16rem;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.playlist-card img {
+  border-radius: 10px;
+}
+
+.playlist-card-description {
+  font-size: 12px;
+}
