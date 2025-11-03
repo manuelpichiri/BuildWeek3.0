@@ -1,11 +1,18 @@
+body {
+  background-color: #202020;
+}
 .swiper {
   width: 100%;
   height: 100%;
 }
+.swiper-wrapper {
+  box-shadow: inset 10px 20px 5px 20px black,
+    inset 10px 20px 5px 20px rgb(186, 28, 28);
+}
 
 .swiper-slide {
   font-size: 18px;
-  background: #444;
+
   display: flex;
   align-items: center;
 }
