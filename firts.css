@@ -12,16 +12,15 @@
   font-size: 12px;
 }
 
-<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-=======
-.recently-played-img-container,
-.recently-played-playlist-img-container {
-  width: 200px;
-  height: 200px;
+  .recently-played-img-container,
+  .recently-played-playlist-img-container {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 .recently-played-playlist-img-container {
@@ -39,7 +38,6 @@
 .swiper {
   width: 100%;
   height: 100%;
->>>>>>> d7e3fb2da0cedb5eec85a5fc5d76310f0a6000b1
 }
 
 body {
@@ -81,7 +79,6 @@ body {
   transition: color 0.2s;
 }
 
-<<<<<<< HEAD
 .menu-btn:hover {
   color: #ffffff;
 }
@@ -336,11 +333,3 @@ body {
     max-width: 50%;
   }
 }
-=======
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
->>>>>>> d7e3fb2da0cedb5eec85a5fc5d76310f0a6000b1
