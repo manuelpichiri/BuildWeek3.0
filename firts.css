@@ -11,6 +11,25 @@
 .playlist-card-description {
   font-size: 12px;
 }
+
+.recently-played-img-container,
+.recently-played-playlist-img-container {
+  width: 200px;
+  height: 200px;
+}
+
+.recently-played-playlist-img-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.recently-played-img-container img,
+.recently-played-playlist-img-container img {
+  width: 100%;
+  object-fit: cover;
+}
+
 .swiper {
   width: 100%;
   height: 100%;
