@@ -1,28 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "CircularSpotify", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #000;
-  color: #fff;
-  overflow-x: hidden;
-}
-
 .sidebar {
   background-color: #000000;
   height: 100vh;
-  width: 300px;
+
   display: flex;
   flex-direction: column;
   padding: 24px 12px 0 12px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  overflow: hidden;
-  z-index: 100;
+
 }
 
 .sidebar-header {
@@ -239,60 +222,43 @@ body {
   background: linear-gradient(180deg, #535353 0%, #121212 340px);
   min-height: 100vh;
   padding: 0;
-  margin-left: 300px;
-}
-.right-sidebar {
-  background-color: #000000;
-  min-height: 100vh;
-  padding: 0;
-  width: 320px;
-  position: fixed;
-  right: 0;
-  top: 0;
+  height: 100vh;
+ overflow: scroll;
+ overflow-x: hidden;
+
 }
 
-@media (max-width: 1399.98px) {
-  .right-sidebar {
-    display: none;
-  }
+
+/*_______________________________________________________*/
+.playlist-card {
+  width: 16rem;
+  border-radius: 10px;
+  padding: 12px;
 }
 
-@media (max-width: 991.98px) {
-  .sidebar {
-    transform: translateX(-100%);
-    transition: transform 1s;
-  }
-
-  .sidebar.show {
-    transform: translateX(0);
-  }
-
-  .main-content {
-    margin-left: 0;
-  }
+.playlist-card img {
+  border-radius: 10px;
 }
 
-@media (max-width: 767.98px) {
-  .sidebar {
-    width: 100%;
-  }
+.playlist-card-description {
+  font-size: 12px;
 }
 
-@media (max-width: 575.98px) {
-  .sidebar {
-    width: 72px;
-    padding: 24px 8px 0 8px;
+  .recently-played-img-container,
+  .recently-played-playlist-img-container {
+    width: 200px;
+    height: 200px;
   }
 
-  .nav-link span {
-    display: none;
-  }
 
-  .playlist-container {
-    display: none;
-  }
+.recently-played-playlist-img-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
 
-  .main-content {
-    margin-left: 72px;
-  }
+.recently-played-img-container img,
+.recently-played-playlist-img-container img {
+  width: 100%;
+  object-fit: cover;
 }
