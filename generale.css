@@ -1,3 +1,6 @@
+.sidebar {
+  background-color: #000000;
+  height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -220,62 +223,10 @@
   min-height: 100vh;
   padding: 0;
   height: 100vh;
-  overflow: scroll;
-  overflow-x: hidden;
+ overflow: scroll;
+ overflow-x: hidden;
+ scrollbar-width: thin;
+ scrollbar-color: rgba(255,255,255.0.3) transparent;
 
-}
 
-
-/*_______________________________________________________*/
-.playlist-card {
-  width: 16rem;
-  border-radius: 10px;
-  padding: 12px;
-}
-
-.playlist-card img {
-  border-radius: 10px;
-}
-
-.playlist-card-description {
-  width: 100%;
-  height: 100%;
-  font-size: 12px;
-}
-
-.recently-played-cards-container {
-  gap: 12px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-row: 1fr 1fr;
-}
-
-@media (max-width: 768px) {
-
-  .recently-played-cards-container {
-    grid-template-columns: 1fr 1fr;
-    grid-row: 1fr 1fr 1fr;
-  }
-
-}
-
-.recently-played-card {
-  min-width: 100px;
-  max-width: 300px
-}
-
-.recently-played-img-container {
-  max-width: 60px;
-  min-width: 20px;
-}
-
-.recently-played-info-container {
-  padding: 0 16px;
-}
-
-.recently-played-info-container p {
-  font-size: 8px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
