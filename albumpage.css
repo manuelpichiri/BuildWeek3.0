@@ -1,0 +1,36 @@
+.main-content{
+      background: linear-gradient(180deg, #ffc609aa 0%, #121212 450px);
+}
+.container-image-album{
+   width: 250px;
+    margin: 20px;
+    box-shadow: 0 0 20px black;
+
+}
+.container-image-album img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+}
+
+.svg-play{
+    fill: white;
+}
+
+@media (min-width:768px) {	
+    .svg-play{
+        fill: black;
+    }   
+}
+.container-songs-list{
+    background-color: #1212123a;
+}
+.container-songs-header p{
+font-size: 12px;
+margin: 0;
+color: #ffffff;
+}
+
+.song-row {
+    font-size: 15px;
+}
