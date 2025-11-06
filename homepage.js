@@ -1,3 +1,4 @@
+/*
 const searchInput = "queen";
 const main = document.querySelector(".main-content");
 const getData = async () => {
@@ -156,3 +157,5 @@ const createMainPlaylistCard = (container) => {
   playlistCardInfoDescription.innerText = "La playlist più calrda del momento";
   playlistCardInfoContainer.appendChild(playlistCardInfoDescription);
 };
+
+*/

@@ -223,8 +223,8 @@
   min-height: 100vh;
   padding: 0;
   height: 100vh;
- overflow: scroll;
- overflow-x: hidden;
+  overflow: scroll;
+  overflow-x: hidden;
 
 }
 
@@ -241,24 +241,44 @@
 }
 
 .playlist-card-description {
+  width: 100%;
+  height: 100%;
   font-size: 12px;
 }
 
-  .recently-played-img-container,
-  .recently-played-playlist-img-container {
-    width: 200px;
-    height: 200px;
-  }
-
-
-.recently-played-playlist-img-container {
+.recently-played-cards-container {
+  gap: 12px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row: 1fr 1fr;
 }
 
-.recently-played-img-container img,
-.recently-played-playlist-img-container img {
-  width: 100%;
-  object-fit: cover;
+@media (max-width: 768px) {
+
+  .recently-played-cards-container {
+    grid-template-columns: 1fr 1fr;
+    grid-row: 1fr 1fr 1fr;
+  }
+
+}
+
+.recently-played-card {
+  min-width: 100px;
+  max-width: 300px
+}
+
+.recently-played-img-container {
+  max-width: 60px;
+  min-width: 20px;
+}
+
+.recently-played-info-container {
+  padding: 0 16px;
+}
+
+.recently-played-info-container p {
+  font-size: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
