@@ -219,7 +219,7 @@
 }
 
 .main-content {
-  background: linear-gradient(180deg,  0%, #121212 340px);
+  background: linear-gradient(180deg, #535353 0%, #121212 340px);
   min-height: 100vh;
   padding: 0;
   height: 100vh;
