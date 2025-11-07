@@ -1,11 +1,23 @@
 .playlist-card {
-  width: 16rem;
+
   border-radius: 10px;
   padding: 12px;
 }
 
 .playlist-card img {
   border-radius: 10px;
+}
+
+.playlist-card-info-container {
+  min-width: 100px
+}
+
+@media (max-width: 575px) {
+
+  .playlist-card-info-container {
+    min-width: 140px
+  }
+
 }
 
 .playlist-card-description {
@@ -71,10 +83,9 @@
 
 
 /*_____________________*/
-.hero{
+.hero {
   position: relative;
   background: circle;
-   background-image: radial-gradient( farthest-corner at 100% 0%, rgba(255, 255, 255, 0) 25%,rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
+  background-image: radial-gradient(farthest-corner at 100% 0%, rgba(255, 255, 255, 0) 25%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
   margin: 10px;
 }
-
