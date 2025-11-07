@@ -3,7 +3,7 @@ const mainPlaylistCardsContainer = document.querySelector(".main-playlist-cards-
 
 let searchInput = null
 
-const getData = async () => {
+const getArtistData = async () => {
   const URLData = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${searchInput}`;
 
   const response = await fetch(URLData);
@@ -98,23 +98,35 @@ const createRecentlyPlayedCard = (container) => {
 
 const createMainPlaylistCard = (album, container) => {
 
+  const playlistCardWrapper = document.createElement("div");
+  playlistCardWrapper.setAttribute("class", "col-12 col-sm-6 col-md-4 col-lg-3");
+  container.appendChild(playlistCardWrapper);
+
   const playlistCard = document.createElement("div");
   playlistCard.setAttribute(
     "class",
-    "playlist-card bg-dark d-flex flex-column justify-content-center align-items-start gap-3"
+    "playlist-card bg-dark h-100"
   );
-  container.appendChild(playlistCard);
+  playlistCardWrapper.appendChild(playlistCard);
+
+  const playlistCardColumnContainer = document.createElement("div");
+  playlistCardColumnContainer.setAttribute("class", "d-flex flex-column gap-3");
+  playlistCard.appendChild(playlistCardColumnContainer);
+
+  const playlistCardInnerContainer = document.createElement("div");
+  playlistCardInnerContainer.setAttribute("class", "d-flex flex-md-column justify-content-center align-items-start gap-3");
+  playlistCardColumnContainer.appendChild(playlistCardInnerContainer);
 
   const playlistCardImgContainer = document.createElement("div");
   playlistCardImgContainer.setAttribute(
     "class",
     "playlist-card-img-container w-100"
   );
-  playlistCard.appendChild(playlistCardImgContainer);
+  playlistCardInnerContainer.appendChild(playlistCardImgContainer);
 
   const playlistCardImg = document.createElement("img");
-  playlistCardImg.setAttribute("class", "w-100 object-fit-cover");
-  playlistCardImg.src = "https://picsum.photos/200";
+  playlistCardImg.setAttribute("class", "w-100 img-fluid object-fit-cover");
+  playlistCardImg.src = album.cover_big;
   playlistCardImgContainer.appendChild(playlistCardImg);
 
   const playlistCardInfoContainer = document.createElement("div");
@@ -122,23 +134,52 @@ const createMainPlaylistCard = (album, container) => {
     "class",
     "playlist-card-info-container d-flex flex-column"
   );
-  playlistCard.appendChild(playlistCardInfoContainer);
+  playlistCardInnerContainer.appendChild(playlistCardInfoContainer);
 
-  const playlistCardInfoTitle = document.createElement("h4");
+  const playlistCardInfoTitle = document.createElement("a");
   playlistCardInfoTitle.setAttribute(
     "class",
-    "playlist-title-card fs-6 text-white fw-bold"
+    "playlist-title-card text-decoration-none fs-6 text-white fw-bold"
   );
-  playlistCardInfoTitle.innerText = "Hot Hits Italia";
+  playlistCardInfoTitle.innerText = album.title;
   playlistCardInfoContainer.appendChild(playlistCardInfoTitle);
 
-  const playlistCardInfoDescription = document.createElement("p");
+  const playlistCardInfoDescription = document.createElement("a");
   playlistCardInfoDescription.setAttribute(
     "class",
-    "playlist-card-description text-secondary m-0"
+    "playlist-card-description text-decoration-none text-secondary m-0"
   );
-  playlistCardInfoDescription.innerText = "La playlist più calda del momento";
+  playlistCardInfoDescription.innerText = album.artist.name;
   playlistCardInfoContainer.appendChild(playlistCardInfoDescription);
+
+  const playlistCardBottomContainer = document.createElement("div");
+  playlistCardBottomContainer.setAttribute("class", "d-md-none d-flex justify-content-between align-items-center text-secondary");
+  playlistCardColumnContainer.appendChild(playlistCardBottomContainer);
+
+  const playlistCardLeftBottomContainer = document.createElement("div");
+  playlistCardLeftBottomContainer.setAttribute("class", "d-flex gap-3");
+  playlistCardBottomContainer.appendChild(playlistCardLeftBottomContainer);
+
+  const playlistCardHeartIcon = document.createElement("i");
+  playlistCardHeartIcon.setAttribute("class", "bi bi-heart-fill text-success");
+
+  const playlistCardDotsIcon = document.createElement("i");
+  playlistCardDotsIcon.setAttribute("class", "bi bi-three-dots-vertical");
+
+  playlistCardLeftBottomContainer.append(playlistCardHeartIcon, playlistCardDotsIcon);
+
+  const playlistCardRightBottomContainer = document.createElement("div");
+  playlistCardRightBottomContainer.setAttribute("class", "d-flex gap-3 align-items-center");
+  playlistCardBottomContainer.appendChild(playlistCardRightBottomContainer);
+
+  const playlistCardRightBottomTrackNumber = document.createElement("p");
+  playlistCardRightBottomTrackNumber.setAttribute("class", "small m-0");
+  playlistCardRightBottomTrackNumber.innerText = `${album.nb_tracks} brani`;
+  playlistCardRightBottomContainer.appendChild(playlistCardRightBottomTrackNumber);
+
+  const playlistCardRightBottomSvg = document.createElement("div");
+  playlistCardRightBottomSvg.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="35" height="35"> <circle cx="32" cy="32" r="32" fill="#121212" /> <polygon points="26,20 26,44 46,32" fill="#FFFFFF" /> </svg>`
+  playlistCardRightBottomContainer.appendChild(playlistCardRightBottomSvg);
 
 };
 
@@ -147,7 +188,7 @@ function createRandomPlaylistCard(artist, playlistTitle) {
 
   searchInput = artist
 
-  getData().then(res => {
+  getArtistData().then(res => {
 
     const albumsArray = res.data;
     const thumbnailsCoverNumber = 4;
@@ -163,8 +204,6 @@ function createRandomPlaylistCard(artist, playlistTitle) {
 
     }
     const randomCoverThumbnails = fisherYatesShuffle(albumsArray, thumbnailsCoverNumber);
-
-    console.log(randomCoverThumbnails);
 
     createRecentlyPlayedPlaylistCard(recentlyPlayedCardContainer, randomCoverThumbnails, playlistTitle);
 
@@ -182,13 +221,49 @@ createRandomPlaylistCard("Hot summer", "Hot summer vibes 🌊☀️");
 createRandomPlaylistCard("883", "I mitici anni 90");
 
 
-createMainPlaylistCard(album, mainPlaylistCardsContainer);
-createMainPlaylistCard(album, mainPlaylistCardsContainer);
-createMainPlaylistCard(album, mainPlaylistCardsContainer);
-createMainPlaylistCard(album, mainPlaylistCardsContainer);
-createMainPlaylistCard(album, mainPlaylistCardsContainer);
-createMainPlaylistCard(album, mainPlaylistCardsContainer);
+const imageDragonsLoomAlbumId = 604614962
+const OttottotreGliAnniAlbumId = 90302
+const metallicaMasterOfPuppetsAlbumId = 51001312
+const ledZeppelinPhysicalGraffitiAlbumId = 9674822
+const pinkFloydWishYouWereHereAlbumId = 12114242
 
+const getAlbumData = async (albumId) => {
+
+  const URLData = `https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`
+
+  const response = await fetch(URLData)
+
+  return response.json()
+
+}
+
+const createAlbumCardWithAlbumId = (albumId) => {
+
+  getAlbumData(albumId)
+    .then(album => {
+
+      createMainPlaylistCard(album, mainPlaylistCardsContainer);
+
+    })
+
+}
+
+createAlbumCardWithAlbumId(imageDragonsLoomAlbumId)
+createAlbumCardWithAlbumId(OttottotreGliAnniAlbumId)
+createAlbumCardWithAlbumId(metallicaMasterOfPuppetsAlbumId)
+createAlbumCardWithAlbumId(ledZeppelinPhysicalGraffitiAlbumId)
+createAlbumCardWithAlbumId(pinkFloydWishYouWereHereAlbumId)
+
+
+
+/*
+createMainPlaylistCard(album, mainPlaylistCardsContainer);
+createMainPlaylistCard(album, mainPlaylistCardsContainer);
+createMainPlaylistCard(album, mainPlaylistCardsContainer);
+createMainPlaylistCard(album, mainPlaylistCardsContainer);
+createMainPlaylistCard(album, mainPlaylistCardsContainer);
+createMainPlaylistCard(album, mainPlaylistCardsContainer);
+*/
 /*
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const n = 4;
@@ -205,3 +280,5 @@ function fisherYatesShuffle(arr, n) {
 const shuffledArr = fisherYatesShuffle(arr, n);
 console.log(shuffledArr);
 */
+
+
