@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotify Clone</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/74/Spotify_App_Logo.svg" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="./homePage.css" />
+    <title>Yellowcard - Spotify</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./artistPage.css">
+  <link rel="stylesheet" href="./generale.css" />
+</head>
+
+<body>
+  <div class="container-fluid bg-dark containerBody">
+    <div class="row">
+      <div class="col-3 d-none d-lg-block p-0">
+        <div class="sidebar sticky-start">
+          <div class="sidebar-header">
+            <button class="menu-btn" aria-label="Menu">
+              <div class="dots-icon">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </button>
+          </div>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <svg class="nav-icon home-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577l-7.5-4.33zm-2-1.732a3 3 0 0 1 3 0l7.5 4.33a2 2 0 0 1 1 1.732V20a2 2 0 0 1-2 2h-6.5a1 1 0 0 1-1-1v-6h-3v6a1 1 0 0 1-1 1H2a2 2 0 0 1-2-2V7.577a2 2 0 0 1 1-1.732l7.5-4.33z"
+                    fill="currentColor" />
+                </svg>
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <svg class="nav-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"
+                    fill="currentColor" />
+                </svg>
+                <span>Cerca</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <svg class="nav-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"
+                    fill="currentColor" />
+                </svg>
+                <span>La tua libreria</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="playlist-container">
+            <div class="playlist-header-section">
+              <div class="playlist-header-item">
+                <div class="playlist-header-content">
+                  <svg class="playlist-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z"
+                      fill="currentColor" transform="translate(4 4)" />
+                  </svg>
+                  <span class="playlist-text">Crea playlist</span>
+                </div>
+              </div>
+
+              <div class="playlist-header-item">
+                <div class="playlist-header-content">
+                  <svg class="playlist-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15.724 4.22A4.313 4.313 0 0 0 12.192.814a4.269 4.269 0 0 0-3.622 1.13.837.837 0 0 1-1.14 0 4.272 4.272 0 0 0-6.21 5.855l5.916 7.05a1.128 1.128 0 0 0 1.727 0l5.916-7.05a4.228 4.228 0 0 0 .945-3.577z"
+                      fill="currentColor" />
+                  </svg>
+                  <span class="playlist-text">Brani che ti piacciono</span>
+                </div>
+              </div>
+
+              <div class="playlist-header-item">
+                <div class="playlist-header-content">
+                  <svg class="playlist-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"
+                      fill="currentColor" />
+                  </svg>
+                  <span class="playlist-text">I tuoi episodi</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- LISTA PLAYLIST SCROLLABILE -->
+            <ul class="playlist-items">
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">
+                    early stage emily syndrome (sett-ott 2022)
+                  </div>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">Be The Young</div>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">
+                    *.·:·.cit. Kimiko (lug-ago 2022)
+                  </div>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">saggio vibes🎧🎧🔥</div>
+                </div>
+              </li>
+
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">
+                    main character energy (mag-giu 2022)
+                  </div>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">
+                    that fucking mood 🔫🔥
+                  </div>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">
+                    VEE, CARLOTTA E GIACOMO VANNO A BOSIO
+                  </div>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">
+                    An Emily Winchester kind of mood 🔫🔥
+                  </div>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">
+                    landing page (mar-apr 2022)
+                  </div>
+                  <svg class="pin-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M8.822.797a2.72 2.72 0 0 1 3.847 0l2.534 2.533a2.72 2.72 0 0 1 0 3.848l-3.678 3.678-1.337 4.988-4.486-4.486L1.28 15.78a.75.75 0 0 1-1.06-1.06l4.422-4.422L.155 5.812l4.987-1.337L8.822.797z"
+                      fill="#b3b3b3" />
+                  </svg>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">2021 lol</div>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">
+                    cosa cazzo vuol dire questa affermazione (gen-feb...
+                  </div>
+                  <svg class="pin-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M8.822.797a2.72 2.72 0 0 1 3.847 0l2.534 2.533a2.72 2.72 0 0 1 0 3.848l-3.678 3.678-1.337 4.988-4.486-4.486L1.28 15.78a.75.75 0 0 1-1.06-1.06l4.422-4.422L.155 5.812l4.987-1.337L8.822.797z"
+                      fill="#b3b3b3" />
+                  </svg>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">
+                    honey and glass (nov-dic 2021)
+                  </div>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">
+                    (Revenge) Training Arc 🔥
+                  </div>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">Lidia 💛 Emily</div>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">
+                    minecraft e nintendo switch (sep-oct 2021)
+                  </div>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">
+                    silvano d'orba? I hardly know her (lug - ago 2021)
+                  </div>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">Culo 2021</div>
+                  <svg class="pin-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M8.822.797a2.72 2.72 0 0 1 3.847 0l2.534 2.533a2.72 2.72 0 0 1 0 3.848l-3.678 3.678-1.337 4.988-4.486-4.486L1.28 15.78a.75.75 0 0 1-1.06-1.06l4.422-4.422L.155 5.812l4.987-1.337L8.822.797z"
+                      fill="#b3b3b3" />
+                  </svg>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">Frah Quintale Mix</div>
+                </div>
+              </li>
+              <li class="playlist-item">
+                <div class="playlist-item-content">
+                  <div class="playlist-item-title">Francesco Guccini Mix</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7 col-9 p-0">
+        <div class="main-content main-content-spotify">
+           <div class="top-bar-spotify sticky-top">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <div class="d-flex gap-3">
+                            <button class="nav-btn-circle">&lsaquo;</button>
+                            <button class="nav-btn-circle">&rsaquo;</button>
+                        </div>
+                    </div>
+                    <div class="col-auto ms-auto">
+                        <div class="user-profile-box">
+                            <div class="user-avatar"></div>
+                            <span class="user-name">Lidia Nautilus</span>
+                            <span>&#9660;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-section-spotify">
+            <div class="hero-bg-spotify"></div>
+            <div class="hero-image-spotify" id="heroImageContainer"></div>
+            <div class="container-fluid h-100">
+                <div class="row h-100 align-items-end">
+                    <div class="col-12 hero-content-spotify">
+                        <div class="verified-badge-spotify d-flex align-items-center mb-2">
+                            <svg class="verified-icon me-2" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.814.5a1.658 1.658 0 0 1 2.372 0l2.512 2.572 3.595-.043a1.658 1.658 0 0 1 1.678 1.678l-.043 3.595 2.572 2.512c.667.65.667 1.722 0 2.372l-2.572 2.512.043 3.595a1.658 1.658 0 0 1-1.678 1.678l-3.595-.043-2.512 2.572a1.658 1.658 0 0 1-2.372 0l-2.512-2.572-3.595.043a1.658 1.658 0 0 1-1.678-1.678l.043-3.595L.5 13.186a1.658 1.658 0 0 1 0-2.372l2.572-2.512-.043-3.595a1.658 1.658 0 0 1 1.678-1.678l3.595.043 2.512-2.572zM12 8.354a3.646 3.646 0 1 0 0 7.292 3.646 3.646 0 0 0 0-7.292zM12 14.24a2.24 2.24 0 1 1 0-4.48 2.24 2.24 0 0 1 0 4.48z" fill="currentColor"/>
+                            </svg>
+                            <span class="verified-text text-white">Artista verificato</span>
+                        </div>
+                        <h1 class="artist-name-spotify" id="artistName">Yellowcard</h1>
+                        <p class="monthly-listeners-spotify" id="artistFans">5.500.000 ascoltatori mensili</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-section-spotify sticky-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="controls-spotify d-flex align-items-center">
+                            <button class="play-btn-spotify" id="mainPlayBtn">
+                                <svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.018 14L14.41 8 4.018 2v12zM16 8.5a1 1 0 0 0 1.5.866l3-1.732a1 1 0 0 0 0-1.732l-3-1.732A1 1 0 0 0 16 6.768v1.732z" fill="#000"/>
+                                </svg>
+                            </button>
+                            <button class="following-btn-spotify">SEGUI</button>
+                            <button class="more-btn-spotify">&middot;&middot;&middot;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section-spotify">
+            <div class="section-row-spotify">
+                <div class="left-column">
+                    <section class="popular-section-spotify">
+                        <h2 class="mb-4">Popolari</h2>
+                        <ul class="list-unstyled track-list-spotify" id="topTracksListContainer">
+                        </ul>
+                        <div class="show-more-spotify d-none" id="showMoreBtn">MOSTRA TUTTI</div>
+                    </section>
+                </div>
+
+                <div class="right-column d-none d-md-block">
+                    <section class="liked-section-spotify">
+                        <h2 class="mb-4">Brani che ti piacciono</h2>
+                        <div class="liked-card-spotify">
+                            <div class="liked-cover-container" id="likedCoverContainer">
+                                <img src="" alt="" class="liked-artist-image" id="likedArtistImage">
+                                <div class="liked-heart-overlay">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.724 4.22A4.313 4.313 0 0 0 12.192.814a4.269 4.269 0 0 0-3.622 1.13.837.837 0 0 1-1.14 0 4.272 4.272 0 0 0-6.21 5.855l5.916 7.05a1.128 1.128 0 0 0 1.727 0l5.916-7.05a4.228 4.228 0 0 0 .945-3.577z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="liked-info-spotify">
+                                <div class="liked-title fw-bold mb-1">Hai messo Mi piace a 11 brani</div>
+                                <div class="liked-artist" id="likedArtistName">Di Yellowcard</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-3 bg-info">qqqqqqq</div>
+    </div>
+  </div>
+ <div class="player-bar-spotify">
+        <div class="player-left-spotify">
+            <div class="now-playing-cover-spotify" id="nowPlayingCover"></div>
+            <div class="now-playing-info-spotify">
+                <div class="now-playing-title">Seleziona un brano</div>
+                <div class="now-playing-artist">Artista</div>
+            </div>
+            <button class="heart-btn-spotify" id="playerHeartBtn">
+                <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.724 4.22A4.313 4.313 0 0 0 12.192.814a4.269 4.269 0 0 0-3.622 1.13.837.837 0 0 1-1.14 0 4.272 4.272 0 0 0-6.21 5.855l5.916 7.05a1.128 1.128 0 0 0 1.727 0l5.916-7.05a4.228 4.228 0 0 0 .945-3.577z" fill="currentColor"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="player-center-spotify">
+            <div class="player-controls-spotify">
+                <button class="control-btn-spotify" id="shuffleBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.151.922a.75.75 0 1 0-1.06 1.06L13.109 3H11.16a3.75 3.75 0 0 0-2.873 1.34l-6.173 7.356A2.25 2.25 0 0 1 .39 12.5H0V14h.391a3.75 3.75 0 0 0 2.873-1.34l6.173-7.356a2.25 2.25 0 0 1 1.724-.804h1.947l-1.017 1.018a.75.75 0 0 0 1.06 1.06l2.5-2.5a.75.75 0 0 0 0-1.06l-2.5-2.5zM3.205 14.288a.75.75 0 0 0-1.06 1.06l2.5 2.5a.75.75 0 0 0 1.06 0l2.5-2.5a.75.75 0 1 0-1.06-1.06L5.39 15h-1.947a2.25 2.25 0 0 1-1.724-.804l-.018-.02L.892 12.5H.39a3.75 3.75 0 0 0 2.873 1.34L3.205 14.288z" fill="currentColor"/>
+                    </svg>
+                </button>
+                <button class="control-btn-spotify" id="prevBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.3 1A.3.3 0 0 1 3 1.3v13.4a.3.3 0 0 1 .5.2l.5.3 1.5 1 6-3.5a1 1 0 0 0 0-1.7L5 3.5 3.8 2.8l-.5-.3a.3.3 0 0 1-.5.2zM12 2.75a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-1.5 0v-9a.75.75 0 0 1 .75-.75z" fill="currentColor"/>
+                    </svg>
+                </button>
+                <button class="play-pause-btn-spotify" id="playPauseBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="#000" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"/>
+                    </svg>
+                </button>
+                <button class="control-btn-spotify" id="nextBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.7 15a.3.3 0 0 1-.5-.2v-13.4a.3.3 0 0 1 .5-.2l.5.3 1.5 1 6-3.5a1 1 0 0 0 0-1.7L11 3.5 9.8 2.8l-.5-.3a.3.3 0 0 1-.5.2zM4 2.75a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-1.5 0v-9a.75.75 0 0 1 .75-.75z" fill="currentColor" transform="translate(16 16) rotate(180)"/>
+                    </svg>
+                </button>
+                <button class="control-btn-spotify" id="repeatBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 4.75A.75.75 0 0 1 .75 4h10.97l-2.074-2.223a.75.75 0 0 1 1.096-1.025l3.25 3.5a.75.75 0 0 1 0 1.025l-3.25 3.5a.75.75 0 1 1-1.096-1.025l2.074-2.223H.75A.75.75 0 0 1 0 4.75zm15.25 6.5a.75.75 0 0 1-.75.75H3.53l2.074 2.223a.75.75 0 1 1-1.096 1.025l-3.25-3.5a.75.75 0 0 1 0-1.025l3.25-3.5a.75.75 0 1 1 1.096 1.025L3.53 11.5h10.97a.75.75 0 0 1 .75.75z" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="progress-bar-container-spotify">
+                <span class="time-spotify" id="currentTime">0:00</span>
+                <div class="progress-bar-spotify" id="progressBar">
+                    <div class="progress-fill-spotify" id="progressFill"></div>
+                </div>
+                <span class="time-spotify" id="totalTime">0:00</span>
+            </div>
+        </div>
+
+        <div class="player-right-spotify">
+            <div class="d-flex">
+                <button class="control-btn-spotify" id="lyricsBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.426 2.574a2.831 2.831 0 0 0-4.797 1.55l3.247 3.247a2.831 2.831 0 0 0 1.55-4.797zM10.5 8.118l-2.619-2.62A63303.13 63303.13 0 0 0 4.74 9.075L2.065 12.12a1.287 1.287 0 0 0 1.816 1.816l3.06-2.688 3.56-3.129zM7.12 4.41l-.994-.994.993-.993 4.381 4.383-1.002 1.002z" fill="currentColor"/>
+                    </svg>
+                </button>
+                <button class="control-btn-spotify" id="queueBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.933 1A.75.75 0 0 0 12 1.933V4a1 1 0 0 0 1 1h2.067A.75.75 0 0 0 16 4.25v-2.5a.75.75 0 0 0-.75-.75h-2.317zM7.5 7.5a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-.5-.5zM3.5 9.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 1 0v-3a.5.5 0 0 0-.5-.5zM11.5 5.5a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 1 0V6a.5.5 0 0 0-.5-.5z" fill="currentColor"/>
+                    </svg>
+                </button>
+                <button class="control-btn-spotify" id="connectDeviceBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.426 2.574a2.831 2.831 0 0 0-4.797 1.55l3.247 3.247a2.831 2.831 0 0 0 1.55-4.797zM10.5 8.118l-2.619-2.62A63303.13 63303.13 0 0 0 4.74 9.075L2.065 12.12a1.287 1.287 0 0 0 1.816 1.816l3.06-2.688 3.56-3.129zM7.12 4.41l-.994-.994.993-.993 4.381 4.383-1.002 1.002z" fill="currentColor"/>
+                    </svg>
+                </button>
+                <button class="control-btn-spotify" id="volumeBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.741.85a.75.75 0 0 1 .375.65v13a.75.75 0 0 1-1.125.65l-6.925-4a3.642 3.642 0 0 1-1.33-4.967 3.639 3.639 0 0 1 1.33-1.332l6.925-4a.75.75 0 0 1 .75 0zm-6.924 5.3a2.139 2.139 0 0 0 0 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 4.29V5.56a2.75 2.75 0 0 1 0 4.88z" fill="currentColor"/>
+                            <path d="M11.5 13.614a5.752 5.752 0 0 0 0-11.228v1.55a4.252 4.252 0 0 1 0 8.127v1.55z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                    <div class="volume-bar-spotify" id="volumeBar">
+                        <div class="volume-fill-spotify" id="volumeFill" style="height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./artistPage.js"></script>
+
+</body>
+
+</html>
