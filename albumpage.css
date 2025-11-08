@@ -34,3 +34,8 @@ color: #ffffff;
 .song-row {
     font-size: 15px;
 }
+
+.artist-avatar {
+  max-width: 40px;
+  max-height: 40px;
+}
