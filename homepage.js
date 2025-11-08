@@ -102,6 +102,10 @@ const createMainPlaylistCard = (album, container) => {
   playlistCardWrapper.setAttribute("class", "col-12 col-sm-6 col-md-4 col-lg-3");
   container.appendChild(playlistCardWrapper);
 
+  playlistCardWrapper.addEventListener("click", () => {
+    window.location.href = `./albumpage.html?albumId=${album.id}`
+  })
+
   const playlistCard = document.createElement("div");
   playlistCard.setAttribute(
     "class",
