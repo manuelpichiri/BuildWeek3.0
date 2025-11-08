@@ -16,7 +16,7 @@ const createRecentlyPlayedPlaylistCard = (container, arr, playlistName) => {
   const recentlyPlayedPlaylistCard = document.createElement("div");
   recentlyPlayedPlaylistCard.setAttribute(
     "class",
-    "recently-played-playlist-card d-flex align-items-center bg-dark"
+    "recently-played-playlist-card d-flex align-items-center"
   );
   container.appendChild(recentlyPlayedPlaylistCard);
 
@@ -66,7 +66,7 @@ const createRecentlyPlayedPlaylistCard = (container, arr, playlistName) => {
 const createRecentlyPlayedCard = (container) => {
 
   const recentlyPlayedCard = document.createElement("div");
-  recentlyPlayedCard.setAttribute("class", "recently-played-card d-flex align-items-center bg-dark");
+  recentlyPlayedCard.setAttribute("class", "recently-played-card d-flex align-items-center");
   container.appendChild(recentlyPlayedCard);
 
   const recentlyPlayedImgContainer = document.createElement("div");
@@ -105,7 +105,7 @@ const createMainPlaylistCard = (album, container) => {
   const playlistCard = document.createElement("div");
   playlistCard.setAttribute(
     "class",
-    "playlist-card bg-dark h-100"
+    "playlist-card h-100"
   );
   playlistCardWrapper.appendChild(playlistCard);
 

@@ -1,5 +1,5 @@
 .playlist-card {
-
+  background-color: rgb(24, 24, 24);
   border-radius: 10px;
   padding: 12px;
 }
@@ -47,6 +47,7 @@
   min-width: 100px;
   max-width: 300px;
   border-radius: 4px;
+  background-color: rgb(43, 43, 43);
 }
 
 .recently-played-playlist-img-container,
@@ -75,7 +76,8 @@
 
 .recently-played-playlist-info-container p,
 .recently-played-info-container p {
-  font-size: 8px;
+  font-size: 12px;
+  font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -88,4 +90,39 @@
   background: circle;
   background-image: radial-gradient(farthest-corner at 100% 0%, rgba(255, 255, 255, 0) 25%, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
   margin: 10px;
+}
+
+.player-bar-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(24, 24, 24);
+  border-top: 1px solid rgb(50, 50, 50);
+  height: 100px;
+  padding: 18px;
+  z-index: 999;
+}
+
+.player-bar-info-track-img-container {
+  width: 40px;
+  height: 40px;
+}
+
+#progress-bar {
+  accent-color: #BABABA;
+  height: 12px;
+  min-width: 300px;
+}
+
+.progress-bar-start-number,
+.progress-bar-finish-number {
+  color: #BABABA;
+  font-size: 12px;
+}
+
+.volume-input {
+  accent-color: #BABABA;
+  max-width: 80px;
+  height: 8px;
 }
