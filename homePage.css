@@ -53,8 +53,15 @@
 
 .recently-played-playlist-img-container,
 .recently-played-img-container {
-  max-width: 60px;
-  min-width: 20px;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 575px) {
+  .recently-played-playlist-img-container,
+  .recently-played-img-container {
+    width: 45px;
+  }
 }
 
 .recently-played-playlist-img-container img,
@@ -73,15 +80,18 @@
 .recently-played-playlist-info-container,
 .recently-played-info-container {
   padding: 0 16px;
+  min-width: 0;
 }
 
 .recently-played-playlist-info-container p,
 .recently-played-info-container p {
   font-size: 12px;
   font-weight: 600;
+  max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: block;
 }
 
 
