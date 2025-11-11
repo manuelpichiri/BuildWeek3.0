@@ -58,6 +58,7 @@
 }
 
 @media (max-width: 575px) {
+
   .recently-played-playlist-img-container,
   .recently-played-img-container {
     width: 45px;
@@ -103,7 +104,7 @@
   margin: 10px;
 }
 
-.player-bar-container {
+.desktop-player-bar-container {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -112,7 +113,19 @@
   border-top: 1px solid rgb(50, 50, 50);
   height: 100px;
   padding: 18px;
-  z-index: 999;
+
+}
+
+.mobile-player-bar-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(40, 40, 40);
+  height: 70px;
+  margin: 0 10px;
+  border-radius: 8px;
+  padding: 0 18px;
 }
 
 .player-bar-info-track-img-container {
@@ -136,4 +149,54 @@
   accent-color: #BABABA;
   max-width: 80px;
   height: 8px;
+}
+
+@media (max-width: 992px) {
+
+  .progress-bar-container,
+  .player-bar-shuffle-icon,
+  .player-bar-repeat-icon {
+    display: none !important;
+  }
+}
+
+.mobile-player-bar-img-container {
+  width: 48px;
+}
+
+.mobile-player-bar-img-container img {
+  border-radius: 50%;
+}
+
+.mobile-player-bar-container p {
+  font-size: 14px;
+  font-weight: 600;
+  width: 100%;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.mobile-player-bar-container span {
+  display: inline-block;
+  animation-name: scroll-text;
+  animation-duration: 7s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
 }
